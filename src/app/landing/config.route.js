@@ -5,7 +5,7 @@
     .module('app.landing')
     .config(configFunction)
 
-    configFunction.$inject = ['$routeProvider']
+    // configFunction.$inject = ['$routeProvider']
 
     function configFunction($routeProvider){
       $routeProvider.when('/', {
