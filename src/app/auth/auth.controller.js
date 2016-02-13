@@ -21,9 +21,14 @@
 
     function register (user){
       // will log the user in
-      return firebaseAuthObject.$createUser(user);
+      return firebaseAuthObject.$createUser(user)
+        .then(function (user){
+          console.log(user);
+        })
+        .catch(function (error){
+          console.log(error);
+        });
     }
-
   }
 
 
