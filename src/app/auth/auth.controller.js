@@ -19,6 +19,7 @@
 
     vm.register = register;
     vm.login = login;
+    vm.logout = logout;
 
     function register (user){
       // will log the user in
@@ -42,7 +43,8 @@
     }
 
     function logout(){
-      
+      console.log('logging out');
+      firebaseAuthObject.$unauth();
     }
   }
 
