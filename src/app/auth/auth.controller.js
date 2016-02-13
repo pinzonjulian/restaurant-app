@@ -18,6 +18,7 @@
     }
 
     vm.register = register;
+    vm.login = login;
 
     function register (user){
       // will log the user in
@@ -27,6 +28,16 @@
         })
         .catch(function (error){
           console.log(error);
+        });
+    }
+
+    function login(user){
+      return firebaseAuthObject.$authWithPassword(user)
+        .then(function(loggedInUser){
+          console.log(loggedInUser)
+        })
+        .catch(function(error){
+          console.log(error)
         });
     }
   }
