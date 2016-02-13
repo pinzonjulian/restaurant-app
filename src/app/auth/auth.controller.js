@@ -40,6 +40,10 @@
           console.log(error)
         });
     }
+
+    function logout(){
+      
+    }
   }
 
 
