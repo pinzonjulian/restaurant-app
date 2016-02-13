@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth']
+  AuthController.$inject = ['$location', '$firebaseAuth']
 
-  function AuthController ($firebaseAuth) {
+  function AuthController ($location, $firebaseAuth) {
     var vm = this;
     var firebaseReference = new Firebase('https://jperestaurantapp.firebaseio.com/');
     var firebaseAuthObject = $firebaseAuth(firebaseReference);
@@ -43,8 +43,9 @@
     }
 
     function logout(){
-      console.log('logging out');
       firebaseAuthObject.$unauth();
+      // Redirect to '/' $location is a angular service.
+      $location.path('/');
     }
   }
 
