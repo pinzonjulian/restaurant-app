@@ -5,7 +5,7 @@
     .module('app.auth')
     .factory('authService', authService);
 
-    auth.Service.$inject = ['$firebaseAuth', 'firebaseDataService']
+    authService.$inject = ['$firebaseAuth', 'firebaseDataService']
 
   function authService($firebaseAuth, firebaseDataService) {
 
@@ -14,7 +14,8 @@
     var service = {
       register: register, 
       login : login,
-      logout : logout
+      logout : logout, 
+      isLoggedIn : isLoggedIn
     }
     return service;
 
@@ -30,6 +31,10 @@
 
     function logout(user) {
       return firebaseAuthObject.$unauth();
+    }
+
+    function isLoggedIn() {
+      return firebaseAuthObject.$getAuth();
     }
 
   }
