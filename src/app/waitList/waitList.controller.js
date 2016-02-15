@@ -5,9 +5,9 @@
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
 
-    WaitListController.$inject = ['firebaseDataService', 'partyService'];
+    WaitListController.$inject = ['textMessageService', 'partyService'];
 
-    function WaitListController(firebaseDataService, partyService){
+    function WaitListController(textMessageService, partyService){
       
       var vm = this;
 
@@ -27,6 +27,10 @@
 
       function removeParty(party){
         vm.parties.$remove(party);
+      }
+
+      function sendTextMessage(party) {
+        textMessageService.sendTextMessage(party, vm.parties)
       }
 
       function toggleDone (party) {
