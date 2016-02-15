@@ -11,7 +11,7 @@
     // a .factory service creator returns an object. 
     var service = {
       Party : Party,
-      parties: $firebaseArray(firebaseDataService.root)
+      parties: $firebaseArray(firebaseDataService.root.child('parties'))
     };
 
     return service;
