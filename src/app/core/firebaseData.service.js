@@ -2,8 +2,7 @@
   'use strict';
 
   angular
-    .module('app.core')
-    .factory('firebaseDataService', firebaseDataService)
+
 
     firebaseDataService.$inject('FIREBASE_URL')
 
