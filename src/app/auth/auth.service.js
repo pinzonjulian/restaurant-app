@@ -12,7 +12,8 @@
     var firebaseAuthObject = $firebaseAuth(firebaseDataService.root)
 
     var service = {
-      register: register
+      register: register, 
+      login : login
     }
     return service;
 
@@ -22,6 +23,9 @@
       return firebaseAuthObject.$createUser(user)
     }
 
+    function login(user) {
+      return firebaseAuthObject.$authWithPassword(user)
+    }
 
   }
 
