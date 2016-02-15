@@ -29,17 +29,6 @@
         vm.parties.$remove(party);
       }
 
-      function sendTextMessage(party){
-        var newTextMessage = {
-          phoneNumber: party.phone,
-          size: party.size,
-          name: party.name
-        };
-        firebaseDataService.textMessages.push(newTextMessage);
-        party.notified = true;
-        vm.parties.$save(party);
-      }
-
       function toggleDone (party) {
         vm.parties.$save(party);
       }
