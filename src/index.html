@@ -11,7 +11,6 @@
   </head>
   <body>
 
-    <!-- This is the content that changes based on the URL -->
     <nav ng-controller="AuthController as vm" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -32,6 +31,7 @@
       </div>
     </nav>
 
+    <!-- This is the content that changes based on the URL -->
     <ng-view></ng-view>
 
     <!--Third-party JS-->
@@ -61,6 +61,10 @@
     <!-- landing module -->
     <script src="app/landing/landing.module.js"></script>
     <script src="app/landing/config.route.js"></script>
+
+    <!-- layout module -->
+    <script src="app/layout/layout.module.js" ></script>
+    <script src="app/layout/navbar.directive.js" ></script>
 
     <!-- waitList module -->
     <script src="app/waitList/waitList.module.js"></script>
