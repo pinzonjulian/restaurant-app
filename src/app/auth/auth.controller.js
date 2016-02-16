@@ -17,8 +17,6 @@
 
     vm.register = register;
     vm.login = login;
-    vm.logout = logout;
-    vm.isLoggedIn = authService.isLoggedIn;
 
     function register (user){
       // will log the user in
@@ -35,17 +33,13 @@
       return authService.login(user)
         .then(function(loggedInUser){
           console.log(loggedInUser)
+          $location.path('/waitList')
         })
         .catch(function(error){
           console.log(error)
         });
     }
 
-    function logout(){
-      authService.logout()
-      // Redirect to '/' $location is a angular service.
-      $location.path('/');
-    }
   }
 
 
