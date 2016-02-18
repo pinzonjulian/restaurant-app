@@ -17,6 +17,7 @@
 
     vm.register = register;
     vm.login = login;
+    vm.error = null;
 
     function register (user){
       // will log the user in
@@ -28,18 +29,18 @@
           return authService.sendWelcomeEmail(user.email);
         })
         .catch(function (error){
-          console.log(error);
+          vm.error = error;
         });
     }
 
     function login(user){
       return authService.login(user)
         .then(function(loggedInUser){
-          console.log(loggedInUser)
-          $location.path('/waitList')
+          console.log(loggedInUser);
+          $location.path('/waitList');
         })
         .catch(function(error){
-          console.log(error)
+          vm.error = error;
         });
     }
 
