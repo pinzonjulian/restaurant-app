@@ -8,10 +8,14 @@
   partyService.$inject = ['$firebaseArray', 'firebaseDataService']
 
   function partyService ($firebaseArray, firebaseDataService ) {
-    // a .factory service creator returns an object. 
+
+    var parties = null;
+
+    // a .factory service creator returns an object.
     var service = {
       Party : Party,
-      getPartiesByUser: getPartiesByUser
+      getPartiesByUser: getPartiesByUser,
+      reset : reset
     };
 
     return service;
@@ -27,7 +31,18 @@
     }
 
     function getPartiesByUser(uid) {
-      return $firebaseArray(firebaseDataService.users.child(uid).child('parties'));
+      if(!parties){
+        parties = $firebaseArray(firebaseDataService.users.child(uid).child('parties'));
+      }
+      return parties;
+    }
+
+    function reset() {
+      // Break the connection established by $firebaseArray
+      if (parties){
+        parties.$destroy();
+        parties = null;
+      }
     }
 
   }
