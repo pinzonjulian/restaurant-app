@@ -2,7 +2,7 @@
   'use strict'
 
   angular
-    .module('app.module')
+    .module('app.waitList')
     .directive('gzPartyTable', gzPartyTable)
 
     function gzPartyTable() {
@@ -11,7 +11,7 @@
         restrict : 'E',
         controller : PartyTableController,
         controllerAs : 'vm',
-        bindToController = true,
+        bindToController : true,
         scope : {
           parties : '='
         }
