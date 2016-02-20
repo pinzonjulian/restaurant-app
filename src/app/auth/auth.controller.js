@@ -10,11 +10,6 @@
   function AuthController ($location, authService) {
     var vm = this;
 
-    var user = {
-      email: '',
-      password: ''
-    }
-
     vm.register = register;
     vm.login = login;
     vm.error = null;

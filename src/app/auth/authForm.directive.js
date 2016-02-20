@@ -22,6 +22,12 @@
 
   function AuthFormController() {
     var vm = this;
+
+    var user = {
+      email: '',
+      password: ''
+    }
+    
   }
 
 })();
