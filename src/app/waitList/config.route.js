@@ -9,7 +9,7 @@
 
     function configFunction($routeProvider){
       $routeProvider.when('/waitList', {
-        templateUrl: 'app/waitList/waitList.html',
+        templateUrl: 'app/waitList/waitlist.html',
         controller: 'WaitListController',
         controllerAs: 'vm',
         resolve : {user : resolveUser}

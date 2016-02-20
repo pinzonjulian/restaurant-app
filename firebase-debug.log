@@ -1,0 +1,8 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      node /usr/local/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v0.12.7
+[debug] Time:         Sat Feb 20 2016 15:25:24 GMT-0500 (COT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/jperestaurantapp/token?token=XXX 
