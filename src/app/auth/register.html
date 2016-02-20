@@ -6,7 +6,7 @@
   <p ng-show="vm.error" class="text-danger" ng-bind="vm.error"></p>
 
   <!-- Email input -->
-  <input name="email" ng-model="vm.user.email" type="email" class="form-control" placeholder="Email" required autofocus>
+  <input name="email" ng-model="vm.user.email" ng-model-options="{updateOn: 'default blur', debounce: {'default': 1000, 'blur': 0}}" type="email" class="form-control" placeholder="Email" required autofocus>
 
   <!-- Email error -->
   <div ng-show="authForm.$submitted">
