@@ -1,22 +1,22 @@
-(function (){
+(function() {
   'use strict';
 
   angular
     .module('app.core')
-    .factory('textMessageService', textMessageService)
-  
+    .factory('textMessageService', textMessageService);
+
   textMessageService.$inject = ['firebaseDataService'];
 
-  function textMessageService (firebaseDataService) {
+  function textMessageService(firebaseDataService) {
     var service = {
-      sendTextMessage : sendTextMessage
-    }
+      sendTextMessage: sendTextMessage
+    };
 
     return service;
 
     //======================
 
-    function sendTextMessage(party, parties){
+    function sendTextMessage(party, parties) {
       var newTextMessage = {
         phoneNumber: party.phone,
         size: party.size,
@@ -27,6 +27,5 @@
       parties.$save(party);
     }
 
-    
   }
 })();
